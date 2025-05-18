@@ -5,6 +5,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.seleniumhq.selenium:selenium-java:2.52.0'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
     testImplementation 'org.seleniumhq.selenium:selenium-java:2.52.0'
     testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
     testImplementation('junit:junit:4.12'){
