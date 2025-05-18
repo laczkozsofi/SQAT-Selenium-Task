@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.net.MalformedURLException;
 
-public class BasePageTest {
+public class AccountTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
