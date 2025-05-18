@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AccountPage extends Page {
     private final By logoutMenuLocator = By.cssSelector("li.dropdown.logged-dropdown");
-    private final By logoutLinkLocator = By.cssSelector("ul.dropdown-hover-menu a[href*='account/logout']");
     private final By accountEditLocator = By.cssSelector("a[href*='account/edit']");
 
 
@@ -19,8 +18,9 @@ public class AccountPage extends Page {
         Actions actions = new Actions(driver);
         WebElement menu = waitVisibiltyAndFindElement(logoutMenuLocator);
         actions.moveToElement(menu).click().perform();
-        this.wait.until(ExpectedConditions.visibilityOfElementLocated(logoutLinkLocator));
-        WebElement logoutLink = wait.until(ExpectedConditions.elementToBeClickable(logoutLinkLocator));
+        By logoutLlinkLocator = By.cssSelector("ul.dropdown-hover-menu a[href*='account/logout']");
+        this.wait.until(ExpectedConditions.visibilityOfElementLocated(logoutLlinkLocator));
+        WebElement logoutLink = wait.until(ExpectedConditions.elementToBeClickable(logoutLlinkLocator));
         logoutLink.click();
 
         return new LoginPage(driver, wait);
